@@ -1,0 +1,58 @@
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# SSH keys
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# Runtime data
+data/
+instance/
+logs/
+*.log
+
+# Backups
+backup/
+backups/
+*.bak
+*.backup
+*.tar
+*.tar.gz
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Node / frontend
+node_modules/
+dist/
+
+# Editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Sensitive local material
+private/
+raw/
+secrets/

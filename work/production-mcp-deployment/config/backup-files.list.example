@@ -1,0 +1,6 @@
+# Files/directories that must survive a Git update.
+# Add one repository-relative path per line.
+
+.env
+instance
+data
