@@ -1,0 +1,14 @@
+# Public-safe example only. This is not a complete Postfix configuration.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postfix-relay-config
+  namespace: mail-platform
+  labels:
+    app: postfix-relay
+data:
+  main.cf.example: |
+    myhostname = <RELAY_HOSTNAME>
+    inet_interfaces = all
+    relayhost = [<UPSTREAM_SMTP_HOST>]
+    # Keep relay protection configured for approved sources only.

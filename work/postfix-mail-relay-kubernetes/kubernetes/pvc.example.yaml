@@ -1,0 +1,14 @@
+# Public-safe example only. Choose capacity and storage class for the target environment.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postfix-relay-logs
+  namespace: mail-platform
+  labels:
+    app: postfix-relay
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: <LOG_STORAGE_CAPACITY>

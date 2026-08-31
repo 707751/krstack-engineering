@@ -38,6 +38,21 @@ Project:
 
 `work/production-mcp-deployment/`
 
+### Postfix Mail Relay on Kubernetes
+
+A sanitized engineering pattern covering:
+
+- Kubernetes / GKE
+- Postfix and SMTP
+- Persistent logging with syslog-ng
+- LMDB support
+- Workload scheduling and Service design
+- SMTP troubleshooting and queue analysis
+
+Project:
+
+work/postfix-mail-relay-kubernetes/
+
 ## Security & Sanitization
 
 All public examples in this repository are intentionally sanitized.

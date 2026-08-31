@@ -1,0 +1,17 @@
+# Public-safe example only. The placeholder is intentionally not an active SMTP port.
+apiVersion: v1
+kind: Service
+metadata:
+  name: postfix-relay
+  namespace: mail-platform
+  labels:
+    app: postfix-relay
+spec:
+  type: LoadBalancer
+  selector:
+    app: postfix-relay
+  ports:
+    - name: smtp
+      port: "<SMTP_PORT>"
+      targetPort: "<SMTP_PORT>"
+      protocol: TCP
