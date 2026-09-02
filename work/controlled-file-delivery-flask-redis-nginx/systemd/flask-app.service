@@ -1,0 +1,25 @@
+[Unit]
+Description=Controlled File Delivery Flask Application (sanitized reference)
+After=network-online.target redis.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=filedelivery
+Group=filedelivery
+WorkingDirectory=/opt/filedelivery
+Environment="PATH=/opt/filedelivery/venv/bin"
+Environment="DOWNLOAD_ROOT=/srv/downloads"
+Environment="POLICY_FILE=/etc/filedelivery/allow-ip-limits"
+Environment="REDIS_URL=redis://127.0.0.1:6379/0"
+ExecStart=/opt/filedelivery/venv/bin/gunicorn --workers 2 --bind 127.0.0.1:5000 app:app
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadOnlyPaths=/srv/downloads /etc/filedelivery
+
+[Install]
+WantedBy=multi-user.target

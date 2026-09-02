@@ -1,0 +1,5 @@
+# Documentation-only client policies. Unlisted clients use DEFAULT_DOWNLOAD_LIMIT.
+192.0.2.10=10
+192.0.2.20=-1
+192.0.2.30=0
+192.0.2.40=5
